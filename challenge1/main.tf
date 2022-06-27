@@ -1,8 +1,3 @@
-provider "google" {
-  region  = var.gcp_region
-  project = var.gcp_project
-}
-
 module "networking" {
   source                = "./modules/networking"
 }

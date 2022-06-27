@@ -6,7 +6,7 @@ variable "gcp_region" {
 
 variable "gcp_zone" {
   type        = string
-  description = "Region to use for GCP provider"
+  description = "Zone to use for GCP provider"
   default     = "europe-west2-a"
 }
 

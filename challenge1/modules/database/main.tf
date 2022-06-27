@@ -1,4 +1,4 @@
-resource "google_sql_database_instance" "internal-sql-instance" {
+resource "google_sql_database_instance" "sql-instance" {
   name             = "sql-instance-1"
   region           = var.db_region
   database_version = var.database_version
@@ -21,5 +21,5 @@ resource "google_sql_user" "admin" {
     name = "${var.user_name}"
     host = "${var.user_host}"
     password = "${var.user_password}"
-    instance = "${google_sql_database_instance.internal-sql-instance.name}"
+    instance = "${google_sql_database_instance.sql-instance.name}"
 }

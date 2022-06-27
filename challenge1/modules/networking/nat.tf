@@ -1,8 +1,9 @@
+# Cloud router
 resource "google_compute_router" "router" {
   name    = "router"
   network = google_compute_network.main.id
   bgp {
-    asn            = 64514
+    asn            = 64514 # Fixed value for this router resource
     advertise_mode = "CUSTOM"
   }
 }
@@ -19,7 +20,7 @@ resource "google_compute_router_nat" "nat" {
     name                    = "private-subnet"
     source_ip_ranges_to_nat = ["ALL_IP_RANGES"]
   }
-  depends_on = [
-    google_compute_subnetwork.private-subnet
-  ]
+  # depends_on = [
+  #   google_compute_subnetwork.private-subnet
+  # ]
 }

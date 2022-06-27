@@ -1,5 +1,5 @@
-resource "google_compute_firewall" "web-firewall" {
-    name = "web-firewall"
+resource "google_compute_firewall" "allow_ssh_main" {
+    name = "allow-ssh-main"
     network = "main"
     description = "Allow http/https for all source range"
     
@@ -12,17 +12,16 @@ resource "google_compute_firewall" "web-firewall" {
     priority = 1000
 }
 
-# resource "google_compute_firewall" "deny-web-to-db-egress" {
-#     name = "db-firewall"
-#     network = "main"
-#     description = "Deny all from source web to db"
-#     direction = "EGRESS"
-#     deny {
-#       protocol = "all"
-#     }
-
-#     target_tags = ["web"]
-#     destination_ranges = ["10.176.0.3/32"]
-
-#     priority = 1000
-# }
+resource "google_compute_firewall" "allow_http_https_webs" {
+    name = "allow-http-https-webs"
+    network = "main"
+    description = "Allow http/https for all source range"
+    
+    allow {
+      ports = ["80", "443"]
+      protocol = "tcp"
+    }
+    source_ranges = ["0.0.0.0/0"]
+    target_tags = [ "web" ]
+    priority = 1000
+}
