@@ -16,11 +16,9 @@ Have created below resources
 - Cloud Nat and Router for private instance access to internet
 - Script to run Apache server on web-tier. Displays the instance name from metadata.
 
-# Challenge-2 :
+# Challenge-2 : AWS Metadata
 
 Query the meta data of an instance within aws and provide a json formatted output
-
-###Response without Arg:
 
 - Example-1:
   $ ./query-matadata.sh
