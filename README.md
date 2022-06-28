@@ -20,6 +20,8 @@ Have created below resources
 
 Query the meta data of an instance within aws and provide a json formatted output
 
+Tool used : Shell scripting
+
 - Example-1:
   $ ./query-matadata.sh
 
@@ -32,3 +34,21 @@ Output:
 Output:
 `{ "availabilityZone": "eu-west-2b" }`
 `{ "region": "eu-west-2" }`
+
+# Challenge-3 : Parse nested object
+
+A function that you pass in the object and a key and get back the value
+
+Object : { x: { y: { z: 'a' } } }
+
+- Key : x/y/z
+  `output: a`
+
+- Key : x/y or x/y/
+  `output: { z: 'a' }`
+
+- Key : x
+  `output: { y: { z: 'a' } }`
+
+- Key : '' (Empty or invalid key returns the same object back)
+  `output: { x: { y: { z: 'a' } } }`
