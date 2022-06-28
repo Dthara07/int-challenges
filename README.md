@@ -2,7 +2,8 @@
 
 This challenge is to create a 3-tier env using a tool of my choice.
 
-Provider : GCP\\n
+Provider : GCP
+
 Tool: Terraform
 
 Have created below resources
