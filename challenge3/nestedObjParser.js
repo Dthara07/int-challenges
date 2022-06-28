@@ -9,4 +9,4 @@ function nestedObjParser(object, key) {
 }
 
 let obj = { x: { y: { z: 'a' } } };
-console.log(nestedObjParser(obj, 'x'));
+console.log(nestedObjParser(obj, 'x/y/z'));
