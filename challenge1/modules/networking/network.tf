@@ -15,7 +15,7 @@ resource "google_compute_subnetwork" "public-subnet" {
 # Private Subnet for app tier
 resource "google_compute_subnetwork" "private-subnet" {
   name          = "private-subnet"
-  ip_cidr_range = var.ip_cidr_range_public
+  ip_cidr_range = var.ip_cidr_range_private
   region        = var.gcp_region
   network       = google_compute_network.main.id
 }

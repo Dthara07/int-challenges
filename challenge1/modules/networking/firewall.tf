@@ -8,7 +8,9 @@ resource "google_compute_firewall" "allow_ssh_main" {
       protocol = "tcp"
     }
     source_ranges = ["0.0.0.0/0"]
-    
+    depends_on = [
+      google_compute_network.main
+    ]
     priority = 1000
 }
 
@@ -23,5 +25,8 @@ resource "google_compute_firewall" "allow_http_https_webs" {
     }
     source_ranges = ["0.0.0.0/0"]
     target_tags = [ "web" ]
+    depends_on = [
+      google_compute_network.main
+    ]
     priority = 1000
 }

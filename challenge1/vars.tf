@@ -13,5 +13,5 @@ variable "gcp_zone" {
 variable "gcp_project" {
   type        = string
   description = "Project to use for this config"
-  default = "rcgnaecomoffshorepdp1000105852"
+  default = "<Add your project ID>"
 }
