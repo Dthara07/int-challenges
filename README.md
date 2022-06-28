@@ -39,7 +39,7 @@ Output:
 
 A function that you pass in the object and a key and get back the value
 
-Run : node nestedObjParser.js 
+Run : `node nestedObjParser.js`
 
 Object : { x: { y: { z: 'a' } } }
 
