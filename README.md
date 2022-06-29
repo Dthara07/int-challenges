@@ -5,7 +5,7 @@ This challenge is to create a 3-tier env using a tool of my choice.
 - Provider : GCP
 - Tool: Terraform
 
-Have created below resources
+### Resouces Created
 
 - Custom VPC
 - Private and public subnet
@@ -39,7 +39,7 @@ Output:
 
 A function that you pass in the object and a key and get back the value
 
-Run : node nestedObjParser.js 
+Run : `node nestedObjParser.js`
 
 Object : { x: { y: { z: 'a' } } }
 
