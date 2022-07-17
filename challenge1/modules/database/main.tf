@@ -1,6 +1,6 @@
 resource "google_sql_database_instance" "sql" {
   name             = "sql"
-  region           = var.db_region
+  region           = var.gcp_region
   database_version = var.database_version
   deletion_protection = false
 
@@ -18,8 +18,8 @@ resource "google_sql_database_instance" "sql" {
 # Create User
 resource "google_sql_user" "admin" {
     count = 1 
-    name = "${var.user_name}"
+    name = "${var.db_user_name}"
     host = "${var.user_host}"
-    password = "${var.user_password}"
+    password = "${var.db_user_password}"
     instance = "${google_sql_database_instance.sql.name}"
 }

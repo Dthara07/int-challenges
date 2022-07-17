@@ -11,13 +11,13 @@ output "main-vpc-id" {
 }
 
 # Subnet for web tier passed from networks module
-output "public-subnet" {
-  description = "Public subnet Id"
-  value       = "${google_compute_subnetwork.public-subnet.name}"
+output "private_subnet_1" {
+  description = "Private subnet Id"
+  value       = "${google_compute_subnetwork.private_subnet_1.name}"
 }
 
 # Subnet for app tier passed from networks module
-output "private-subnet" {
+output "private_subnet_2" {
   description = "Private subnet name"
-  value       = "${google_compute_subnetwork.private-subnet.name}"
+  value       = "${google_compute_subnetwork.private_subnet_2.name}"
 }

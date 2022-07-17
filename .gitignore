@@ -1,1 +1,11 @@
 .DS_Store
+
+# .tfstate files
+/challenge1/terraform.tfstate
+/challenge1/terraform.tfstate.backup
+
+/challenge1/*.tfvars
+/challenge1/*.tfvars.json
+/challenge1/.terraform/
+/.idea/
+/challenge1/modules/database/db.tfvars
