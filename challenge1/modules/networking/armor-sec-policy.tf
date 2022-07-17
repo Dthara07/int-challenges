@@ -28,10 +28,10 @@ resource "google_compute_security_policy" "policy" {
 
 
 resource "google_compute_instance" "test_siege_vm" {
-  name = "test_siege-vm"
+  name = "test-siege-vm"
   description = "Stress test the HTTP load balancer"
   zone = "europe-west2-a"
-  
+  count = 1
   allow_stopping_for_update = true
 
   machine_type = "e2-micro"
@@ -45,7 +45,7 @@ resource "google_compute_instance" "test_siege_vm" {
 
   network_interface {
     network = "main"
-    subnetwork = var.ip_cidr_range_private_subnet_1
+    subnetwork = google_compute_subnetwork.private_subnet_1.id
     access_config {
     }  
   }
