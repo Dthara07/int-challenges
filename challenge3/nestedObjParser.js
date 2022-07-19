@@ -8,5 +8,5 @@ function nestedObjParser(object, key) {
   return object;
 }
 
-let obj = { x: { y: { z: 'a' } } };
-console.log(nestedObjParser(obj, 'x/y/z'));
+let obj = { "x": { "y": { "z": "a" } } };
+console.log(nestedObjParser(obj, process.argv[2]));
